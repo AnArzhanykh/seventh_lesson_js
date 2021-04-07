@@ -1,8 +1,11 @@
+// Сколько символов должно быть в инпуте, указывается в его атрибуте data-length.
+// Если введено подходящее количество, то border инпута становится зеленым, если неправильное - красным.
+// Для добавления стилей, используй CSS-классы valid и invalid.
+
+
 const inputRef = document.querySelector('input#validation-input')
 
 const lengthinput = inputRef.dataset.length
-
-
 
 inputRef.addEventListener('change', handlerChangeValue) 
 
