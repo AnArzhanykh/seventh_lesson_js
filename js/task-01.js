@@ -2,7 +2,8 @@
 
 // Посчитает и выведет в консоль количество категорий в ul#categories, то есть элементов li.item. Получится 'В списке 3 категории.'.
 
-// Для каждого элемента li.item в списке ul#categories, найдет и выведет в консоль текст заголовка элемента (тега h2) и количество элементов в категории (всех вложенных в него элементов li).
+// Для каждого элемента li.item в списке ul#categories, найдет и выведет в консоль текст заголовка элемента (тега h2) и количество элементов в категории 
+// (всех вложенных в него элементов li).
 
 // Например для первой категории получится:
 
@@ -17,14 +18,17 @@ const setItemsRef = document.querySelectorAll('.item')
 
 
 
-const setItems = (arr) =>{
-    for(let i =0; i< arr.length; i+=1){
-        console.log(`Категория: ${arr[i].firstElementChild.textContent}`);
-        console.log(`Количество элементов: ${arr[i].lastElementChild.children.length}`);
-    }
-}
+// const setItems = (arr) =>{
+//     for(let i =0; i< arr.length; i+=1){
+//         console.log(`Категория: ${arr[i].firstElementChild.textContent}`);
+//         console.log(`Количество элементов: ${arr[i].lastElementChild.children.length}`);
+//     }
+// }
 
+const setItems = setItemsRef.forEach(item =>{
+        console.log(`Категория: ${item.firstElementChild.textContent}`);
+        console.log(`Количество элементов: ${item.lastElementChild.children.length}`);
+})
 
-
-setItems(setItemsRef);
+// setItems(setItemsRef);
 
