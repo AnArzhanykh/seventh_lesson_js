@@ -15,7 +15,7 @@ const btnCreate = document.querySelector('[data-action="render"]');
 const btnDelete = document.querySelector('[data-action="destroy"]');
 const menyRef = document.querySelector('#boxes')
 let amount = Number(inputRef.value);
-
+let arr = [];
 
 btnCreate.addEventListener('click', e => createBoxes(amount));
 btnDelete.addEventListener('click', destroyBoxes);
@@ -24,7 +24,12 @@ inputRef.addEventListener('change', e => amount = Number(e.target.value));
 
 function createBoxes(amount){
     console.log(amount);
-    const arr = [];
+    
+    if(arr.length > 0) {
+        console.log('очистите поле кнопкой');
+        return
+    }
+
     for(let i =0; i < amount; i+=1){
         const count = (i+1)*30;
         const newDiv = document.createElement('div');
@@ -38,6 +43,9 @@ function createBoxes(amount){
 
 function destroyBoxes(){
     menyRef.remove()
+    inputRef.value = '';
+    arr = [];
+    console.log(amount);
 }
 
 function randomColor(){
