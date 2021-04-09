@@ -8,7 +8,8 @@ const spanRef = document.querySelector('span#text');
 
 // spanRef.style.fontSize =`${inputRef.value}px`;
 
-
+spanRef.style.fontSize = '14px';
+inputRef.value = parseInt(spanRef.style.fontSize);
 
 inputRef.addEventListener('click', e =>{
 

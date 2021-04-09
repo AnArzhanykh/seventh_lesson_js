@@ -15,14 +15,24 @@ const ingredients = [
 
 const ingredientsRef = document.querySelector('#ingredients');
 
+// const createIngridientsRef = arr => {
+//     const newArray = []
+//     arr.map(item =>{
+//         const elem = document.createElement('li');
+//         elem.textContent = item;
+//         newArray.push(elem)
+//     })
+//     ingredientsRef.append(...newArray)
+// }
+
 const createIngridientsRef = arr => {
-    const newArray = []
+
     arr.map(item =>{
         const elem = document.createElement('li');
         elem.textContent = item;
-        newArray.push(elem)
+        ingredientsRef.insertAdjacentElement('afterbegin', elem);
     })
-    ingredientsRef.append(...newArray)
+    
 }
 
 createIngridientsRef(ingredients);

@@ -23,15 +23,13 @@ inputRef.addEventListener('change', e => amount = Number(e.target.value));
 
 
 function createBoxes(amount){
-    console.log(amount);
-    
     if(arr.length > 0) {
         console.log('очистите поле кнопкой');
         return
     }
 
     for(let i =0; i < amount; i+=1){
-        const count = (i+1)*30;
+        const count = 30 + (i*10);
         const newDiv = document.createElement('div');
         newDiv.style.width = `${count}px`;
         newDiv.style.height =`${count}px`;
@@ -42,14 +40,16 @@ function createBoxes(amount){
 }
 
 function destroyBoxes(){
-    menyRef.remove()
+    while (menyRef.firstChild) {
+        menyRef.removeChild(menyRef.firstChild);
+    }
     inputRef.value = '';
     arr = [];
-    console.log(amount);
 }
 
 function randomColor(){
-    const color='rgb('+Math.round(Math.random()*255)+','+Math.round(Math.random()*255)+','+Math.round(Math.random()*255)+')';
+    // const color='rgb('+Math.round(Math.random()*255)+','+Math.round(Math.random()*255)+','+Math.round(Math.random()*255)+')';
+    const color=`rgb(${Math.round(Math.random()*255)}, ${Math.round(Math.random()*255)}, ${Math.round(Math.random()*255)})`;
     return color;
 }
 

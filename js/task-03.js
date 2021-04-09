@@ -27,16 +27,27 @@ const images = [
 const menuRef = document.querySelector('#gallery');
 
 
+// const createImagesRef = images => {
+//     const arr =[]
+//     images.map(item =>{
+//         const imageRef = document.createElement('img');
+//         imageRef.classList.add('item-image');
+//         imageRef.src = item.url
+//         imageRef.alt = item.alt
+//         arr.push(imageRef)
+//     })
+//     menuRef.append(...arr);
+// }
+
 const createImagesRef = images => {
-    const arr =[]
     images.map(item =>{
         const imageRef = document.createElement('img');
         imageRef.classList.add('item-image');
         imageRef.src = item.url
         imageRef.alt = item.alt
-        arr.push(imageRef)
+        menuRef.insertAdjacentElement('afterbegin',imageRef);
     })
-    menuRef.append(...arr)
+
 }
 
-createImagesRef(images)
+createImagesRef(images);

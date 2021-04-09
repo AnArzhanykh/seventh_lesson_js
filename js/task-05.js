@@ -9,6 +9,7 @@ inputRef.addEventListener('input',handlerChangeName );
 
 
 function handlerChangeName (e) {
-    nameRef.innerText = e.target.value
-    nameRef.innerText === ''? nameRef.innerText = 'незнакомец' :  nameRef.innerText;
+    nameRef.innerText = e.target.value || 'незнакомец';
+    // nameRef.innerText = e.target.value
+    // nameRef.innerText === ''? nameRef.innerText = 'незнакомец' :  nameRef.innerText;
 }
